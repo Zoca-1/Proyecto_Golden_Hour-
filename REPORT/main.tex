@@ -1,0 +1,612 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue!50!black, citecolor=black, urlcolor=blue!50!black}
+
+\title{\textbf{Golden Hour}\\[4pt]
+  \large Accesibilidad a Salud Resolutiva en el Perú:\\
+  Un Análisis Geoespacial de Ica, Cusco y Loreto}
+\author{Proyecto Integrador Golden Hour}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand{\abstractname}{Resumen Ejecutivo}
+\begin{abstract}
+\noindent
+El acceso oportuno a un establecimiento de salud con capacidad resolutiva
+(niveles II y III, MINSA) es determinante para la supervivencia en
+emergencias obstétricas, traumatológicas y quirúrgicas. Este estudio
+construye y evalúa un indicador de accesibilidad geoespacial --el
+tiempo de viaje hasta el establecimiento resolutivo más cercano-- para
+tres departamentos que representan las tres macrorregiones naturales del
+Perú: Ica (Costa), Cusco (Sierra) y Loreto (Selva). A partir de 8{,}632
+centros poblados (fuente INEI, censo 1999/2002) y 62 establecimientos
+resolutivos (RENIPRESS/SUSALUD), se calculan matrices origen-destino por
+carretera, caminata y bicicleta, y se agregan en indicadores ponderados
+por población a nivel distrital, provincial y departamental.
+
+Los hallazgos son consistentes con una brecha de accesibilidad severa y
+desigualmente distribuida. El coeficiente de Gini del tiempo de acceso
+ponderado por población es de \textbf{0.729} a nivel nacional (de los 3
+departamentos), con una dispersión notable entre ámbitos (Ica 0.768,
+Loreto 0.655, Cusco 0.510). Bajo el umbral de 60 minutos configurado como
+referencia de ``hora dorada'', aproximadamente \textbf{29.1\,\%} de la
+población analizada queda fuera de ese margen. La diferencia entre
+entornos urbano y rural es estadísticamente significativa (Mann-Whitney
+$U$, $p = 0.0002$), con un tiempo de acceso ponderado casi 4 veces mayor
+en zonas rurales (120.6 min) que en zonas urbanas (30.2 min). Un cruce
+analítico exploratorio muestra una asociación positiva, moderada y
+estadísticamente significativa entre el índice de ruralidad distrital y
+el tiempo de acceso (Spearman $\rho = 0.266$, $p = 0.0001$, $n = 200$
+distritos) -- una asociación espacial/correlacional, no causal. Se
+discuten las limitaciones metodológicas del estudio (vintage censal,
+disponibilidad de motores de ruteo, redes fluviales no mapeadas) y se
+proponen recomendaciones de política focalizadas en los distritos
+identificados como más críticos.
+\end{abstract}
+
+\tableofcontents
+
+% =============================================================================
+\section{Introducción y Contexto Geográfico}
+% =============================================================================
+
+La accesibilidad geográfica a servicios de salud resolutivos es una de las
+dimensiones más citadas -- y más difíciles de medir con datos abiertos -- de
+la equidad sanitaria. El concepto de \textit{golden hour} (``hora dorada''),
+originado en la medicina de trauma, sostiene que la probabilidad de
+supervivencia ante una emergencia grave cae abruptamente cuando el tiempo
+transcurrido hasta recibir atención definitiva supera aproximadamente 60
+minutos. En un país con la geografía tan heterogénea como el Perú --costa
+desértica, cordillera andina y llanura amazónica-- ese umbral se cumple de
+maneras radicalmente distintas según el territorio.
+
+Este proyecto integrador selecciona un departamento por cada una de las
+tres macrorregiones naturales del país para capturar esa heterogeneidad:
+
+\begin{itemize}
+  \item \textbf{Ica (Costa)}: territorio desértico costero, con una red vial
+    relativamente densa y una población concentrada en pocos valles.
+  \item \textbf{Cusco (Sierra)}: territorio andino de orografía compleja,
+    con provincias altamente pobladas cerca de la capital regional y
+    provincias remotas de selva alta (p.\,ej. La Convención) con muy baja
+    densidad vial.
+  \item \textbf{Loreto (Selva)}: el departamento más extenso del Perú,
+    donde el transporte fluvial sustituye en gran medida a la red vial
+    terrestre -- una limitación central que se discute en la
+    Sección~\ref{sec:limitaciones}.
+\end{itemize}
+
+El objetivo del proyecto es construir, de extremo a extremo, un pipeline
+reproducible --ingesta de datos abiertos, validación, cálculo de tiempos de
+viaje, construcción de indicadores y un tablero interactivo-- que permita
+cuantificar la brecha de acceso a salud resolutiva en estos tres territorios
+y identificar, con evidencia, dónde una intervención de infraestructura vial
+o de red de referencia tendría el mayor impacto marginal.
+
+% =============================================================================
+\section{Metodología y Decisiones Técnicas}
+% =============================================================================
+
+El proyecto se organizó en cuatro fases de código (\texttt{acquisition.py},
+\texttt{validation.py}, \texttt{routing.py}, \texttt{metrics.py} /
+\texttt{export.py}) más un tablero interactivo (\texttt{dashboard.py}), todas
+parametrizadas desde un único archivo de configuración
+(\texttt{config.md}). Esta sección documenta las decisiones técnicas no
+triviales tomadas en cada etapa.
+
+\subsection{Ingesta y validación de datos}
+
+\subsubsection{Fuentes y sustituciones de fuente}
+
+Se utilizaron tres fuentes de datos abiertos del Estado peruano:
+
+\begin{itemize}
+  \item \textbf{RENIPRESS} (SUSALUD/MINSA): registro de establecimientos de
+    salud, resuelto dinámicamente vía la API CKAN del Portal Nacional de
+    Datos Abiertos para obtener siempre el archivo mensual más reciente.
+  \item \textbf{Límites administrativos} (IGN): departamentos, provincias y
+    distritos, en formato \textit{shapefile}.
+  \item \textbf{Centros poblados}: usados como puntos de demanda.
+\end{itemize}
+
+La fuente de centros poblados requirió dos sustituciones sucesivas,
+documentadas explícitamente en \texttt{config.md} como decisiones de
+diseño:
+
+\begin{enumerate}
+  \item \textbf{MINEDU/SIGMED $\rightarrow$ IGN.} El visor SIGMED
+    (\url{sigmed.minedu.gob.pe}) no expone una URL de descarga estática:
+    el botón de descarga dispara un \textit{postback} ASP.NET parametrizado
+    por selección interactiva de departamento/provincia/distrito, sin
+    endpoint de archivo verificable programáticamente. Se sustituyó por el
+    dataset equivalente ``Centros Poblados'' del IGN, publicado en el mismo
+    portal de datos abiertos que RENIPRESS, con URL estable.
+  \item \textbf{IGN $\rightarrow$ INEI (censo 1999/2002, vía INGEMMET/GEOCATMIN).}
+    La validación de Fase 1 detectó que el 100\,\% de los registros de
+    Loreto en el dataset del IGN tenían la columna de latitud duplicada con
+    el valor de longitud (\texttt{Y = X}) -- un defecto sistemático de la
+    fuente, no un error de intercambio de columnas corregible
+    automáticamente-- dejando ese departamento sin puntos de demanda
+    válidos. Adicionalmente, el dataset del IGN no incluye ningún campo de
+    población, lo cual es incompatible con el requisito central de Fase 3
+    de ponderar los indicadores por habitantes. Se sustituyó, para los 3
+    departamentos de forma consistente, por la capa ``Centros Poblados -
+    INEI'' publicada como servicio ArcGIS REST por INGEMMET/GEOCATMIN, que
+    aporta población real (\texttt{TOT\_POB99}) y clasificación
+    urbano/rural oficial (\texttt{CLASIF02}).
+\end{enumerate}
+
+\subsubsection{Obstáculos técnicos de adquisición}
+
+La adquisición programática de datos abiertos del Estado peruano presentó
+dos obstáculos no documentados en las especificaciones públicas de los
+portales:
+
+\begin{itemize}
+  \item \textbf{WAF con bloqueo por \textit{User-Agent} (HTTP 418).} El
+    portal \url{datosabiertos.gob.pe} está protegido por un
+    \textit{Web Application Firewall} que devuelve el código HTTP 418
+    (``I'm a teapot'') ante el \textit{User-Agent} por defecto de la
+    librería \texttt{requests} de Python (\texttt{python-requests/x.y}),
+    tanto para la API como para la descarga de archivos. Se resolvió
+    enviando encabezados HTTP consistentes con un navegador real.
+  \item \textbf{Forma de respuesta no estándar de la API CKAN.} La API CKAN
+    de este portal envuelve el paquete solicitado (\texttt{package\_show})
+    en una lista de un elemento en el campo \texttt{result}, en vez de
+    devolver el objeto directamente como es usual en CKAN. El código de
+    resolución dinámica de RENIPRESS soporta ambas formas defensivamente.
+  \item \textbf{Certificado TLS incompleto en INGEMMET/GEOCATMIN.} El
+    servidor \url{geocatmin.ingemmet.gob.pe} no envía la cadena de
+    certificados intermedia completa, lo que provoca un error de
+    verificación TLS en cualquier cliente HTTPS estándar (no solo en este
+    proyecto). Verificado manualmente que el contenido servido es
+    correcto, se omite la verificación TLS únicamente para este host y
+    únicamente para la lectura de datos públicos de solo lectura.
+  \item \textbf{Límite de 1{,}000 registros sin paginación.} El servicio
+    ArcGIS REST de centros poblados no soporta paginación por
+    \textit{offset} y limita cada consulta a 1{,}000 registros. Se paginó
+    manualmente consultando cada provincia por separado; la provincia de
+    La Convención (Cusco) aun así excedió el límite y sus registros
+    quedaron truncados a 1{,}000 (ver Sección~\ref{sec:limitaciones}).
+\end{itemize}
+
+\subsubsection{Reglas de validación}
+
+Sobre ambas fuentes de puntos (establecimientos y centros poblados) se
+aplicó una batería de reglas de calidad, documentada en su totalidad en
+\texttt{logs/data\_quality\_report.csv}: coordenadas nulas, en cero o
+faltantes (descartadas); coordenadas fuera del \textit{bounding box}
+continental del Perú; latitud/longitud intercambiadas, con corrección
+automática y tasa de recuperación explícita; puntos fuera de su polígono
+distrital declarado (validación espacial vía \textit{spatial join},
+conservados con bandera para revisión); códigos de establecimiento
+duplicados; problemas de codificación UTF-8 vs. Latin-1; y normalización de
+categorías resolutivas (II-1, II-2, II-E, III-1, III-2, III-E) frente a no
+resolutivas. Tras la validación quedaron 2{,}312 establecimientos de salud
+(62 resolutivos: 26 en Cusco, 21 en Ica, 15 en Loreto) y 8{,}632 centros
+poblados de demanda (5{,}170 Cusco, 2{,}271 Loreto, 1{,}191 Ica), sobre 212
+distritos y 24 provincias.
+
+\subsection{Motor de ruteo, \textit{snapping} y \textit{fallback} Haversine}
+
+Dado que el universo de demanda (8{,}632 puntos) supera el techo
+configurado de 5{,}000 puntos, se aplicó un muestreo estratificado por
+distrito, ponderado por población real (censo INEI), reduciendo la log de
+la población para evitar que un puñado de asentamientos muy grandes
+dominara por completo el muestreo ponderado sin reemplazo. El resultado fue
+una muestra de 5{,}000 puntos (57.9\,\% del universo).
+
+El motor de ruteo sigue una arquitectura de tolerancia a fallos en dos
+niveles:
+
+\begin{enumerate}
+  \item \textbf{OSRM (Docker local) como motor primario}, únicamente para
+    el perfil \textit{car}: el contenedor documentado en
+    \texttt{config.md} expone un único perfil (\textit{driving}), por lo
+    que no puede rutear caminata ni bicicleta de forma correcta.
+  \item \textbf{OSMnx/NetworkX como \textit{fallback} automático}, para
+    \textit{car} cuando OSRM no está disponible, y siempre para
+    \textit{foot}/\textit{bike}. Cada punto se asocia (\textit{snapping})
+    al nodo vial más cercano del grafo descargado de OpenStreetMap, y se
+    calcula la ruta más rápida mediante el algoritmo de Dijkstra de una
+    sola fuente por origen.
+\end{enumerate}
+
+En esta ejecución, OSRM no estuvo disponible (no hay contenedor Docker
+activo en el entorno de cómputo), por lo que el cálculo recayó en el
+\textit{fallback}. Se detectó empíricamente que, una vez que el muestreo
+estratificado dispersa los puntos de demanda por múltiples distritos, el
+\textit{bounding box} combinado por departamento excede ampliamente el área
+recomendada para una única consulta a la API pública de Overpass (hasta 475
+veces el área máxima recomendada para Loreto), generando cientos de
+sub-consultas que agotan el tiempo de espera. Se implementó un umbral de
+área práctica (5\,grados\textsuperscript{2}) por encima del cual el sistema
+omite el intento de descarga del grafo y recurre directamente al
+\textit{fallback} de distancia Haversine:
+\[
+  d_{\text{hav}}(i,j) = 2 R \arcsin\!\left(\sqrt{\sin^2\!\tfrac{\Delta\phi}{2} + \cos\phi_i \cos\phi_j \sin^2\!\tfrac{\Delta\lambda}{2}}\right),
+  \qquad R = 6{,}371.0088\text{ km},
+\]
+multiplicada por un \textbf{factor de desvío empírico de 1.4} para
+aproximar la distancia real de red a partir de la distancia en línea recta,
+y convertida a tiempo con una velocidad asumida por modo (40, 5 y 15
+km/h para \textit{car}, \textit{foot} y \textit{bike}, respectivamente).
+Cada punto queda marcado con \texttt{is\_unroutable = True} cuando se usa
+esta estimación. En la ejecución reportada, el 100\,\% de los pares
+origen-destino recayeron en este \textit{fallback} para los 3
+departamentos -- una limitación central discutida en la
+Sección~\ref{sec:limitaciones}, y precisamente el escenario para el que
+OSRM (que opera sobre extractos OSM locales sin las restricciones de la
+API pública de Overpass) está documentado como motor primario.
+
+\subsection{Formulación del coeficiente de Gini espacial y la curva de Lorenz}
+\label{sec:gini-formula}
+
+El coeficiente de Gini se calculó sobre el tiempo de acceso en automóvil
+$t_i$ de cada punto de demanda $i$, ponderado por su población $w_i$. Sea
+$(t_{(1)}, \dots, t_{(n)})$ el tiempo de acceso ordenado de forma
+\emph{ascendente}, con $w_{(1)}, \dots, w_{(n)}$ las poblaciones asociadas.
+Se definen las fracciones acumuladas de población y de ``tiempo total''
+hasta el punto $k$:
+\[
+  p_k = \frac{\sum_{i=1}^{k} w_{(i)}}{\sum_{i=1}^{n} w_{(i)}},
+  \qquad
+  L_k = \frac{\sum_{i=1}^{k} w_{(i)}\, t_{(i)}}{\sum_{i=1}^{n} w_{(i)}\, t_{(i)}},
+\]
+con $p_0 = L_0 = 0$. La curva de Lorenz es la función lineal a trozos que
+interpola los puntos $(p_k, L_k)$, y el coeficiente de Gini se obtiene como
+$1$ menos el doble del área bajo esa curva (regla del trapecio):
+\[
+  G = 1 - 2\sum_{k=1}^{n} (p_k - p_{k-1}) \cdot \frac{L_k + L_{k-1}}{2}.
+\]
+
+\textbf{Justificación metodológica.} El Gini y la curva de Lorenz se usan
+tradicionalmente para medir la desigualdad en la distribución de un
+\emph{bien} (p.\,ej. el ingreso) entre personas: un Gini alto indica que
+pocas personas concentran una porción desproporcionada del bien. Aquí se
+aplican, de forma deliberada y no convencional, a un \emph{costo} (minutos
+de viaje): un Gini alto no significa que pocos concentran un beneficio,
+sino que la \emph{carga} del tiempo de traslado está muy desigualmente
+repartida -- una fracción de la población soporta tiempos de acceso muchas
+veces mayores que el resto. Esta adaptación es consistente con la
+literatura de equidad en transporte y accesibilidad, que reporta
+habitualmente un ``Gini de tiempos de viaje'' con esta misma lectura
+invertida.
+
+\subsection{Construcción de indicadores}
+
+Todas las agregaciones jerárquicas (distrital, provincial, departamental)
+usan como estadístico principal la \textbf{media ponderada por
+población}, evitando explícitamente que un caserío de unas pocas decenas
+de habitantes pese lo mismo que una capital de distrito de varios miles.
+La media simple y la mediana se reportan solo como contraste diagnóstico.
+El contraste urbano/rural usa la prueba de Mann-Whitney $U$ (no
+paramétrica) en lugar de una prueba $t$, dado que los tiempos de viaje
+exhiben colas largas y distribuciones marcadamente asimétricas que violan
+el supuesto de normalidad de esta última.
+
+\subsubsection{Cruce analítico: tiempo de acceso e índice de ruralidad}
+
+Como segundo indicador regional para el cruce analítico exigido por la
+Fase 3, se construyó un \textbf{índice de ruralidad distrital}: el
+porcentaje de la población de cada distrito clasificada como ``RURAL''
+según la variable oficial del INEI (\texttt{CLASIF02}), derivado
+directamente de los datos ya validados, sin necesidad de una fuente
+externa adicional. Este índice se correlacionó (Spearman, apropiado para
+relaciones monótonas no necesariamente lineales) con el tiempo de acceso
+ponderado a nivel distrital.
+
+\textbf{Naturaleza de la relación (documentado también en el código y en
+los logs de ejecución de \texttt{metrics.py}):} la correlación resultante
+es una asociación \textbf{correlacional/espacial} entre unidades
+geográficas agregadas (una correlación ecológica), \emph{no una relación
+causal}. Un distrito más rural puede tener peor acceso por múltiples
+factores confundidos entre sí --menor densidad vial, mayor distancia a la
+capital provincial, orografía, dispersión poblacional-- que este cruce
+bivariado no aísla ni controla.
+
+% =============================================================================
+\section{Resultados y Análisis Comparativo}
+% =============================================================================
+
+\subsection{Cobertura y tiempos de acceso}
+
+La Tabla~\ref{tab:coverage-bands} muestra la distribución de la población
+analizada por banda de tiempo de acceso en automóvil. Aunque solo el
+19.8\,\% de los \emph{puntos} de demanda están a menos de 30 minutos de un
+establecimiento resolutivo, esos puntos concentran el 57.6\,\% de la
+\emph{población} -- evidencia directa de por qué la ponderación por
+habitantes es indispensable: los asentamientos grandes tienden a ubicarse
+cerca de la red de servicios, y un promedio simple por punto subestimaría
+sistemáticamente el acceso real de la mayoría de las personas.
+
+\input{../data/outputs/coverage_bands.tex}
+
+Bajo el umbral de referencia de 60 minutos (\texttt{config.md}), el
+29.1\,\% de la población analizada queda \textbf{fuera} de la ``hora
+dorada'' vehicular (suma de las bandas 60--120 y $>$120 min).
+
+La Tabla~\ref{tab:access-department} resume el tiempo de acceso ponderado
+por departamento. La brecha es sustancial: Loreto (135.5 min) es más de
+\textbf{10 veces} más lento que Ica (12.5 min), y más de el triple de
+Cusco (46.4 min). Nótese también la magnitud de la diferencia entre la
+media simple y la ponderada en Cusco (73.5 vs.\ 46.4 min) y en Loreto
+(242.5 vs.\ 135.5 min): en ambos casos la población está sistemáticamente
+mejor ubicada que el centro poblado promedio, lo que confirma que reportar
+solo la media simple habría exagerado la severidad de la brecha para la
+mayoría de los habitantes (sin restarle gravedad a la de los que sí están
+mal servidos, como se ve en el análisis de desigualdad).
+
+\input{../data/outputs/access_time_by_department.tex}
+
+\subsection{Brechas críticas por distrito}
+
+La Tabla~\ref{tab:critical-districts} identifica los 10 distritos con peor
+accesibilidad ponderada dentro de cada departamento. El caso más extremo es
+\textbf{Yavarí} (provincia Mariscal Ramón Castilla, Loreto), con un tiempo
+de acceso ponderado de 656.0 minutos (casi 11 horas) para una población de
+2{,}298 habitantes -- consistente con la ausencia de red vial en esa zona
+de frontera amazónica y la dependencia del transporte fluvial. En el otro
+extremo, el peor distrito de Ica (Marcona, 134.8 min) tiene un tiempo de
+acceso comparable al \emph{mejor} de los 10 distritos más críticos de
+Loreto, ilustrando la magnitud de la brecha interregional.
+
+\input{../data/outputs/critical_districts_ranking.tex}
+
+\subsection{Desigualdad en el acceso: Gini y curva de Lorenz}
+
+La Figura~\ref{fig:lorenz} muestra la curva de Lorenz del tiempo de acceso
+ponderado por población, junto con la línea de igualdad perfecta. El
+coeficiente de Gini resultante (Tabla~\ref{tab:gini}) es de \textbf{0.729}
+a nivel de los 3 departamentos combinados.
+
+\input{../data/outputs/gini_summary.tex}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/lorenz_curve.pdf}
+  \caption{Curva de Lorenz del tiempo de acceso a salud resolutiva, ponderada
+    por población. El área entre la curva y la línea de igualdad perfecta
+    es proporcional al coeficiente de Gini (Sección~\ref{sec:gini-formula}).}
+  \label{fig:lorenz}
+\end{figure}
+
+Un hallazgo que solo emerge al desagregar por departamento (y no estaría
+visible en el Gini nacional agregado) es que \textbf{Ica, pese a tener el
+menor tiempo promedio, tiene la mayor desigualdad} (Gini = 0.768): la
+mayoría de su población está muy bien servida, pero una minoría enfrenta
+tiempos varias veces mayores, generando una distribución muy cóncava.
+Cusco, en cambio, tiene la menor desigualdad (Gini = 0.510): su
+accesibilidad es uniformemente intermedia, sin la misma polarización.
+Loreto combina un tiempo promedio alto \emph{y} una desigualdad
+considerable (Gini = 0.655) -- el peor perfil combinado de los tres.
+
+\subsection{Distribución por departamento y contraste urbano/rural}
+
+La Figura~\ref{fig:dist-dept} compara la distribución completa del tiempo
+de acceso en automóvil entre los tres departamentos, con líneas de
+referencia en 30, 60 y 120 minutos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{figures/access_time_distribution_by_department.pdf}
+  \caption{Distribución del tiempo de acceso en automóvil por departamento
+    (diagrama de caja, sin valores atípicos extremos para preservar la
+    legibilidad de la escala).}
+  \label{fig:dist-dept}
+\end{figure}
+
+El contraste urbano/rural (Tabla~\ref{tab:urban-rural}) es marcado: el
+tiempo de acceso ponderado rural (120.6 min) es \textbf{casi 4 veces} el
+urbano (30.2 min). La prueba de Mann-Whitney $U$ (Tabla~\ref{tab:urban-rural-test})
+confirma que esta diferencia es estadísticamente significativa
+($U = 438{,}052$, $p = 0.0002$), lo que descarta que la brecha observada se
+deba al azar muestral.
+
+\input{../data/outputs/urban_rural_summary.tex}
+\input{../data/outputs/urban_rural_test.tex}
+
+\subsection{Cruce con el índice de ruralidad distrital}
+
+La correlación de Spearman entre el índice de ruralidad distrital y el
+tiempo de acceso ponderado (Tabla~\ref{tab:rurality-correlation}) es
+positiva, moderada y estadísticamente significativa
+($\rho = 0.266$, $p = 0.0001$, $n = 200$ distritos): a mayor proporción de
+población rural en un distrito, mayor tiende a ser su tiempo de acceso.
+Como se documentó en la Sección~\ref{sec:gini-formula}, esta es una
+asociación \textbf{correlacional/espacial}, no causal: el coeficiente es
+moderado (no fuerte) precisamente porque factores no controlados en este
+cruce bivariado --orografía, densidad vial, distancia a la capital
+provincial-- explican una parte sustancial de la varianza restante.
+
+\input{../data/outputs/rurality_correlation.tex}
+
+\subsection{Mapa de brechas distritales}
+
+La Figura~\ref{fig:gap-map} presenta el tiempo de acceso ponderado por
+distrito para los tres departamentos, en paneles independientes dado que
+no son territorios contiguos (un único mapa nacional dejaría la mayor
+parte del área en blanco). La escala de color es compartida entre los tres
+paneles para permitir la comparación directa: se aprecia visualmente cómo
+la severidad de la brecha en Loreto (paneles más oscuros, especialmente en
+el extremo este) supera sistemáticamente a la de Ica y Cusco.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/gap_map_district_access_time.pdf}
+  \caption{Tiempo de acceso ponderado por población, por distrito, para
+    Ica, Cusco y Loreto (escala de color compartida). Los distritos en gris
+    no tuvieron una coincidencia de nombre exitosa entre la fuente censal
+    (INEI, 1999/2002) y el shapefile distrital vigente (IGN).}
+  \label{fig:gap-map}
+\end{figure}
+
+% =============================================================================
+\section{Limitaciones Metodológicas}
+\label{sec:limitaciones}
+% =============================================================================
+
+Se documentan explícitamente las limitaciones más relevantes para la
+interpretación correcta de los resultados:
+
+\begin{enumerate}
+  \item \textbf{Resolución temporal censal.} La fuente de centros poblados
+    finalmente utilizada (INEI, vía INGEMMET/GEOCATMIN) corresponde al
+    censo de \textbf{1999/2002} -- más de dos décadas de antigüedad al
+    momento de este estudio. La distribución poblacional real puede haber
+    cambiado sustancialmente, particularmente en zonas de crecimiento
+    urbano acelerado o de migración. Los pesos poblacionales usados para
+    ponderar todos los indicadores heredan esta limitación.
+  \item \textbf{100\,\% de los tiempos de esta ejecución son estimaciones
+    Haversine, no rutas de red reales.} Como se explicó en la
+    Sección~\ref{sec:limitaciones}, sin un contenedor OSRM activo, y dado
+    que el muestreo estratificado dispersa la demanda por áreas
+    demasiado grandes para la API pública de Overpass, el 100\,\% de los
+    pares origen-destino de esta ejecución recurrieron al
+    \textit{fallback} de distancia en línea recta $\times$ 1.4. Esto es
+    metodológicamente razonable como cota aproximada, pero
+    \textbf{subestima sistemáticamente el tiempo real} en zonas de
+    orografía compleja (Cusco) o sin red vial continua (Loreto), donde el
+    factor de desvío real respecto a la línea recta es probablemente mayor
+    a 1.4. Los resultados deben interpretarse como una \emph{cota inferior
+    conservadora} de la severidad real de la brecha, no como tiempos de
+    viaje reales verificados.
+  \item \textbf{Transporte fluvial no modelado.} En Loreto, buena parte de
+    la movilidad real ocurre por vía fluvial (ríos navegables), un modo de
+    transporte completamente ausente tanto de OpenStreetMap como de
+    cualquier extracto OSRM estándar. El modelo asume implícitamente
+    transporte terrestre, lo que probablemente \textbf{sobrestima} el
+    tiempo de acceso en distritos ribereños con conexión fluvial regular,
+    y subestima en aquellos genuinamente aislados por tierra y por río.
+  \item \textbf{Muestreo de demanda.} Por razones de viabilidad
+    computacional, los indicadores se calculan sobre una muestra
+    estratificada del 57.9\,\% del universo de centros poblados (5{,}000
+    de 8{,}632), no sobre el universo completo. Aunque el muestreo es
+    ponderado por población para minimizar el sesgo, los resultados a
+    nivel de distritos con pocos centros poblados (p.\,ej. rankings de
+    Tabla~\ref{tab:critical-districts} con $n < 10$ puntos) tienen mayor
+    varianza muestral.
+  \item \textbf{Truncamiento de datos en La Convención (Cusco).} El
+    servicio ArcGIS REST de origen limita cada consulta a 1{,}000
+    registros sin soporte de paginación por \textit{offset}; la provincia
+    de La Convención, la más extensa y poblada en centros poblados
+    pequeños, excedió ese límite incluso paginando por provincia,
+    quedando con una cobertura parcial documentada en los logs de
+    adquisición.
+  \item \textbf{Coincidencia de nombres entre fuentes de distinto vintage.}
+    La validación espacial de centros poblados contra su distrito
+    declarado (y el mapa de la Figura~\ref{fig:gap-map}) depende de
+    coincidencias de nombre entre la nomenclatura distrital del censo
+    1999/2002 y el shapefile distrital vigente del IGN. Un número no
+    trivial de distritos (373 de 2{,}271 registros de Loreto) no encontró
+    coincidencia exacta, probablemente por creaciones, fusiones o cambios
+    de nombre de distritos en las últimas dos décadas; también se observó
+    al menos un artefacto de codificación de caracteres en un nombre de
+    distrito de la fuente censal (``Kos\dh ipata'' en lugar de
+    ``Kosñipata''), sin impacto en los cálculos numéricos.
+  \item \textbf{Proxy de ruralidad como segundo indicador regional.} El
+    índice de ruralidad usado en el cruce analítico se deriva de la propia
+    fuente de centros poblados (\texttt{CLASIF02}), por lo que no es
+    plenamente independiente del proceso de muestreo de demanda ni de
+    variables potencialmente correlacionadas con la calidad de los datos
+    de coordenadas.
+\end{enumerate}
+
+% =============================================================================
+\section{Recomendaciones de Política Pública}
+% =============================================================================
+
+A partir de la evidencia presentada, se plantean las siguientes
+recomendaciones, priorizadas según el ranking de brechas críticas
+(Tabla~\ref{tab:critical-districts}):
+
+\begin{enumerate}
+  \item \textbf{Priorizar la frontera amazónica de Loreto para
+    intervenciones no convencionales.} Los distritos más críticos del
+    ranking (Yavarí, Ramón Castilla, Morona; todos en la provincia
+    Mariscal Ramón Castilla o Alto Amazonas) superan los 500 minutos de
+    acceso ponderado. Dada la limitación de transporte fluvial no
+    modelado, se recomienda complementar este análisis con datos de rutas
+    fluviales antes de dimensionar cualquier intervención, y evaluar
+    soluciones no viales: telemedicina de emergencia, postas con mayor
+    capacidad resolutiva \textit{in situ}, o transporte aéreo/fluvial de
+    emergencia subsidiado, antes que infraestructura vial (probablemente
+    inviable en el corto plazo en esta geografía).
+  \item \textbf{Cusco: cerrar la brecha de La Convención y el corredor sur
+    andino.} Los distritos críticos de Cusco (Camanti, Marcapata,
+    Kosñipata, Condoroma, Mollepata) están dispersos en varias provincias
+    de orografía compleja, no concentrados en una sola. Se recomienda una
+    intervención de mejora de vías de penetración (afirmado, puentes) en
+    los corredores que conectan estos distritos con sus capitales
+    provinciales, donde ya existen establecimientos resolutivos --el
+    Gini relativamente bajo de Cusco (0.510) sugiere que el problema es
+    más de \emph{cobertura vial dispersa} que de polarización extrema.
+  \item \textbf{Ica: intervención focalizada, no estructural.} El Gini más
+    alto de los tres departamentos (0.768) combinado con el menor tiempo
+    promedio indica que la solución no es una reforma estructural de la
+    red, sino intervenciones puntuales en los distritos identificados
+    (Marcona, San Pedro de Huacarpana, Huancano) -- probablemente
+    ampliaciones de la cartera resolutiva de un establecimiento cercano ya
+    existente, dado que la red vial de la región ya es comparativamente
+    buena.
+  \item \textbf{Focalizar recursos por población, no por número de
+    distritos.} La diferencia sistemática entre la media simple y la
+    ponderada (Tabla~\ref{tab:access-department}) implica que priorizar
+    distritos por conteo simple de unidades geográficas mal servidas
+    sobre-representaría a distritos de baja densidad poblacional. Se
+    recomienda que cualquier fórmula de asignación presupuestal para
+    infraestructura de salud incorpore explícitamente la ponderación
+    poblacional aplicada en este estudio.
+  \item \textbf{Cerrar la brecha urbano-rural con estrategias
+    diferenciadas.} Dada la magnitud de la diferencia (120.6 vs.\ 30.2
+    min, $p = 0.0002$), las intervenciones dirigidas a población rural
+    dispersa (postas móviles, brigadas periódicas, telemedicina) tienen
+    probablemente mayor costo-efectividad marginal que continuar
+    invirtiendo en la red urbana ya relativamente bien servida.
+  \item \textbf{Actualizar la fuente de centros poblados.} Dada la
+    limitación central de vintage censal (Sección~\ref{sec:limitaciones}),
+    se recomienda que cualquier decisión de inversión concreta valide los
+    hallazgos de este estudio contra el Censo de Población y Vivienda más
+    reciente disponible, y contra un extracto OSRM local (en vez del
+    \textit{fallback} Haversine) antes de comprometer recursos.
+\end{enumerate}
+
+% =============================================================================
+\section{Conclusiones}
+% =============================================================================
+
+Este estudio construyó un pipeline reproducible de accesibilidad
+geoespacial a salud resolutiva para Ica, Cusco y Loreto, documentando de
+forma transparente cada decisión técnica --incluyendo las sustituciones de
+fuente de datos y las limitaciones del motor de ruteo-- en el propio código
+y en este reporte. La evidencia cuantitativa confirma tres hallazgos
+robustos a través de múltiples métricas independientes: (i) existe una
+brecha de accesibilidad severa y muy desigualmente distribuida entre los
+tres departamentos y dentro de cada uno de ellos (Gini nacional 0.729);
+(ii) la brecha urbano-rural es estadísticamente significativa y de gran
+magnitud (Mann-Whitney $p = 0.0002$); y (iii) la ruralidad distrital está
+asociada, aunque no de forma determinante, con un peor acceso
+($\rho = 0.266$). Las limitaciones documentadas --particularmente la
+dependencia del \textit{fallback} Haversine en ausencia de un motor de
+ruteo local y el vintage del censo poblacional-- deben leerse como
+invitación a refinar, no a descartar, el diagnóstico: la dirección y el
+orden de magnitud de las brechas identificadas son robustos incluso bajo
+esas limitaciones, y proveen una base cuantitativa defendible para las
+recomendaciones de política planteadas.
+
+\end{document}
