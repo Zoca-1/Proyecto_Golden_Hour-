@@ -1,0 +1,31 @@
+# Manejo de datos
+pandas
+pyarrow
+fastparquet
+
+# Geoespacial
+geopandas
+osmnx
+shapely
+networkx
+scikit-learn   # dependencia de osmnx.distance.nearest_nodes sobre grafos no proyectados
+
+# Parseo de config.md (bloque YAML embebido)
+pyyaml
+
+# Red / consumo de APIs (OSRM, INEI, etc.)
+requests
+
+# Dashboard y reportes
+streamlit
+jinja2
+
+# Estadística
+scipy
+
+# Visualización
+matplotlib
+seaborn
+plotly
+folium
+streamlit-folium
