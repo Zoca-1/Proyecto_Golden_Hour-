@@ -1,0 +1,71 @@
+2026-09-06 19:13:56,801 | INFO     | acquisition | URL RENIPRESS resuelta dinámicamente vía API CKAN: https://www.datosabiertos.gob.pe/sites/default/files/RENIPRESS_31-08-2026.csv
+2026-09-06 19:13:59,421 | INFO     | acquisition | RENIPRESS descargado correctamente: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\renipress.csv
+2026-09-06 19:14:00,722 | INFO     | acquisition | Centros Poblados descargado correctamente: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados.zip
+2026-09-06 19:14:01,538 | INFO     | acquisition | Límites 'departamentos' descargados correctamente: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_departamentos.zip
+2026-09-06 19:14:03,342 | INFO     | acquisition | Límites 'provincias' descargados correctamente: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_provincias.zip
+2026-09-06 19:14:07,470 | INFO     | acquisition | Límites 'distritos' descargados correctamente: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_distritos.zip
+2026-09-06 19:14:07,470 | INFO     | acquisition | Adquisición completa: 3/3 fuentes correctas
+2026-09-06 19:14:14,288 | INFO     | acquisition | RENIPRESS ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\renipress.csv (usar force=True para re-descargar)
+2026-09-06 19:14:14,289 | INFO     | acquisition | Centros Poblados ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados.zip
+2026-09-06 19:14:14,289 | INFO     | acquisition | Límites 'departamentos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_departamentos.zip
+2026-09-06 19:14:14,289 | INFO     | acquisition | Límites 'provincias' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_provincias.zip
+2026-09-06 19:14:14,294 | INFO     | acquisition | Límites 'distritos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_distritos.zip
+2026-09-06 19:14:14,294 | INFO     | acquisition | Adquisición completa: 3/3 fuentes correctas
+2026-09-06 20:03:18,333 | INFO     | acquisition | RENIPRESS ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\renipress.csv (usar force=True para re-descargar)
+2026-09-06 20:03:18,334 | INFO     | acquisition | Centros Poblados ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados.zip
+2026-09-06 20:03:18,335 | INFO     | acquisition | Límites 'departamentos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_departamentos.zip
+2026-09-06 20:03:18,335 | INFO     | acquisition | Límites 'provincias' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_provincias.zip
+2026-09-06 20:03:18,336 | INFO     | acquisition | Límites 'distritos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_distritos.zip
+2026-09-06 20:03:18,336 | WARNING  | acquisition | Se omite la verificación TLS para https://geocatmin.ingemmet.gob.pe/arcgis/rest/services/SERV_OTRAS_FUENTES/MapServer/20/query (cadena de certificados incompleta en el servidor, verificado manualmente); solo se usa para leer datos públicos de solo lectura.
+2026-09-06 20:03:18,584 | INFO     | acquisition | Parche Loreto: 6 provincias a consultar (['MAYNAS', 'LORETO', 'REQUENA', 'UCAYALI', 'ALTO AMAZONAS', 'MARISCAL RAMON CASTILLA'])
+2026-09-06 20:03:18,878 | INFO     | acquisition | Parche Loreto: provincia 'MAYNAS' -> 750 registros
+2026-09-06 20:03:19,240 | INFO     | acquisition | Parche Loreto: provincia 'LORETO' -> 266 registros
+2026-09-06 20:03:19,471 | INFO     | acquisition | Parche Loreto: provincia 'REQUENA' -> 230 registros
+2026-09-06 20:03:19,809 | INFO     | acquisition | Parche Loreto: provincia 'UCAYALI' -> 193 registros
+2026-09-06 20:03:20,222 | INFO     | acquisition | Parche Loreto: provincia 'ALTO AMAZONAS' -> 613 registros
+2026-09-06 20:03:20,556 | INFO     | acquisition | Parche Loreto: provincia 'MARISCAL RAMON CASTILLA' -> 219 registros
+2026-09-06 20:03:20,577 | INFO     | acquisition | Parche Centros Poblados Loreto guardado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados_loreto_patch.csv (2271 registros)
+2026-09-06 20:03:20,578 | INFO     | acquisition | Adquisición completa: 4/4 fuentes correctas
+2026-09-07 16:35:07,837 | INFO     | acquisition | RENIPRESS ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\renipress.csv (usar force=True para re-descargar)
+2026-09-07 16:35:07,839 | INFO     | acquisition | Centros Poblados ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados.zip
+2026-09-07 16:35:07,840 | INFO     | acquisition | Límites 'departamentos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_departamentos.zip
+2026-09-07 16:35:07,840 | INFO     | acquisition | Límites 'provincias' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_provincias.zip
+2026-09-07 16:35:07,841 | INFO     | acquisition | Límites 'distritos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_distritos.zip
+2026-09-07 16:35:07,842 | WARNING  | acquisition | Se omite la verificación TLS para https://geocatmin.ingemmet.gob.pe/arcgis/rest/services/SERV_OTRAS_FUENTES/MapServer/20/query (cadena de certificados incompleta en el servidor, verificado manualmente); solo se usa para leer datos públicos de solo lectura.
+2026-09-07 16:35:08,345 | INFO     | acquisition | Centros Poblados INEI [ICA]: 5 provincias a consultar (['CHINCHA', 'NAZCA', 'PALPA', 'ICA', 'PISCO'])
+2026-09-07 16:35:08,579 | INFO     | acquisition | Centros Poblados INEI [ICA]: provincia 'CHINCHA' -> 304 registros
+2026-09-07 16:35:08,811 | INFO     | acquisition | Centros Poblados INEI [ICA]: provincia 'NAZCA' -> 166 registros
+2026-09-07 16:35:09,161 | INFO     | acquisition | Centros Poblados INEI [ICA]: provincia 'PALPA' -> 138 registros
+2026-09-07 16:35:09,414 | INFO     | acquisition | Centros Poblados INEI [ICA]: provincia 'ICA' -> 391 registros
+2026-09-07 16:35:09,656 | INFO     | acquisition | Centros Poblados INEI [ICA]: provincia 'PISCO' -> 192 registros
+2026-09-07 16:35:09,990 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: 13 provincias a consultar (['PAUCARTAMBO', 'ANTA', 'ESPINAR', 'ACOMAYO', 'CANAS', 'CANCHIS', 'URUBAMBA', 'LA CONVENCION', 'CALCA', 'CUSCO', 'CHUMBIVILCAS', 'QUISPICANCHI', 'PARURO'])
+2026-09-07 16:35:10,232 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'PAUCARTAMBO' -> 257 registros
+2026-09-07 16:35:10,609 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'ANTA' -> 388 registros
+2026-09-07 16:35:10,923 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'ESPINAR' -> 753 registros
+2026-09-07 16:35:11,276 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'ACOMAYO' -> 243 registros
+2026-09-07 16:35:11,507 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'CANAS' -> 162 registros
+2026-09-07 16:35:11,769 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'CANCHIS' -> 329 registros
+2026-09-07 16:35:12,008 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'URUBAMBA' -> 229 registros
+2026-09-07 16:35:12,285 | WARNING  | acquisition | [CUSCO] Provincia 'LA CONVENCION' excede el límite de transferencia (1000) incluso tras filtrar; se obtuvieron 1000 registros parciales.
+2026-09-07 16:35:12,286 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'LA CONVENCION' -> 1000 registros
+2026-09-07 16:35:12,626 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'CALCA' -> 385 registros
+2026-09-07 16:35:12,980 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'CUSCO' -> 168 registros
+2026-09-07 16:35:13,229 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'CHUMBIVILCAS' -> 399 registros
+2026-09-07 16:35:13,505 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'QUISPICANCHI' -> 513 registros
+2026-09-07 16:35:13,759 | INFO     | acquisition | Centros Poblados INEI [CUSCO]: provincia 'PARURO' -> 344 registros
+2026-09-07 16:35:14,106 | INFO     | acquisition | Centros Poblados INEI [LORETO]: 6 provincias a consultar (['MAYNAS', 'LORETO', 'REQUENA', 'UCAYALI', 'ALTO AMAZONAS', 'MARISCAL RAMON CASTILLA'])
+2026-09-07 16:35:14,383 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'MAYNAS' -> 750 registros
+2026-09-07 16:35:14,723 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'LORETO' -> 266 registros
+2026-09-07 16:35:14,964 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'REQUENA' -> 230 registros
+2026-09-07 16:35:15,305 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'UCAYALI' -> 193 registros
+2026-09-07 16:35:15,762 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'ALTO AMAZONAS' -> 613 registros
+2026-09-07 16:35:16,001 | INFO     | acquisition | Centros Poblados INEI [LORETO]: provincia 'MARISCAL RAMON CASTILLA' -> 219 registros
+2026-09-07 16:35:16,090 | INFO     | acquisition | Centros Poblados INEI (censo) guardado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados_inei_censo.csv (8632 registros)
+2026-09-07 16:35:16,093 | INFO     | acquisition | Adquisición completa: 4/4 fuentes correctas
+2026-09-09 19:04:46,384 | INFO     | acquisition | RENIPRESS ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\renipress.csv (usar force=True para re-descargar)
+2026-09-09 19:04:46,386 | INFO     | acquisition | Centros Poblados ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados.zip
+2026-09-09 19:04:46,387 | INFO     | acquisition | Límites 'departamentos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_departamentos.zip
+2026-09-09 19:04:46,387 | INFO     | acquisition | Límites 'provincias' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_provincias.zip
+2026-09-09 19:04:46,388 | INFO     | acquisition | Límites 'distritos' ya en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\limites_distritos.zip
+2026-09-09 19:04:46,389 | INFO     | acquisition | Centros Poblados INEI (censo) ya está en caché: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\raw\centros_poblados_inei_censo.csv
+2026-09-09 19:04:46,389 | INFO     | acquisition | Adquisición completa: 4/4 fuentes correctas

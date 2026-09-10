@@ -1,0 +1,227 @@
+2026-09-07 16:42:12,057 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 16:42:12,367 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 16:42:12,371 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 16:42:12,436 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 16:42:12,440 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 16:42:12,461 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.tex
+2026-09-07 16:42:12,463 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 16:42:12,467 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 16:42:12,469 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 16:42:12,471 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 16:42:12,473 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 16:42:12,478 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 16:42:12,479 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 16:42:12,482 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 16:42:12,495 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 16:42:12,496 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 16:42:12,499 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 16:42:12,500 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 16:42:12,502 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 16:42:12,505 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 16:42:12,506 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 16:42:12,509 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 16:42:13,704 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 16:42:14,014 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 16:42:14,699 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 16:42:14,700 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 16:43:45,981 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 16:43:46,261 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 16:43:46,265 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 16:43:46,327 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 16:43:46,329 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 16:43:46,350 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.tex
+2026-09-07 16:43:46,352 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 16:43:46,356 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 16:43:46,358 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 16:43:46,360 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 16:43:46,363 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 16:43:46,368 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 16:43:46,369 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 16:43:46,371 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 16:43:46,384 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 16:43:46,385 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 16:43:46,387 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 16:43:46,388 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 16:43:46,390 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 16:43:46,393 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 16:43:46,394 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 16:43:46,396 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 16:43:47,193 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 16:43:47,538 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 16:43:48,368 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 16:43:48,369 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 16:46:43,644 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 16:46:43,940 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 16:46:43,944 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 16:46:44,005 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 16:46:44,008 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 16:46:44,009 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 16:46:44,013 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 16:46:44,014 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 16:46:44,017 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 16:46:44,018 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 16:46:44,025 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 16:46:44,026 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 16:46:44,028 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 16:46:44,041 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 16:46:44,042 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 16:46:44,044 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 16:46:44,045 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 16:46:44,047 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 16:46:44,050 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 16:46:44,051 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 16:46:44,053 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 16:46:44,850 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 16:46:45,157 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 16:46:45,878 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 16:46:45,880 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 17:26:01,899 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 17:26:02,165 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 17:26:02,169 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 17:26:02,233 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 17:26:02,235 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 17:26:02,237 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 17:26:02,242 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 17:26:02,244 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 17:26:02,247 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 17:26:02,248 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 17:26:02,253 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 17:26:02,254 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 17:26:02,257 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 17:26:02,269 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 17:26:02,270 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 17:26:02,272 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 17:26:02,273 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 17:26:02,275 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 17:26:02,278 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 17:26:02,279 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 17:26:02,281 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 17:26:03,084 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 17:26:03,390 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 17:26:04,102 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 17:26:04,103 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 17:26:49,975 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 17:26:50,240 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 17:26:50,243 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 17:26:50,299 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 17:26:50,301 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 17:26:50,302 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 17:26:50,307 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 17:26:50,308 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 17:26:50,310 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 17:26:50,311 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 17:26:50,317 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 17:26:50,318 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 17:26:50,320 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 17:26:50,333 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 17:26:50,335 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 17:26:50,338 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 17:26:50,339 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 17:26:50,342 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 17:26:50,345 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 17:26:50,346 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 17:26:50,348 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 17:26:51,136 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 17:26:51,447 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 17:26:52,153 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 17:26:52,154 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 17:27:31,841 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 17:27:32,106 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 17:27:32,109 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 17:27:32,164 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 17:27:32,167 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 17:27:32,168 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 17:27:32,173 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 17:27:32,175 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 17:27:32,177 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 17:27:32,178 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 17:27:32,184 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 17:27:32,185 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 17:27:32,187 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 17:27:32,199 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 17:27:32,201 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 17:27:32,203 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 17:27:32,204 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 17:27:32,206 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 17:27:32,209 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 17:27:32,210 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 17:27:32,213 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 17:27:32,989 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 17:27:33,289 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 17:27:33,992 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 17:27:33,993 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 17:28:27,364 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 17:28:27,643 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 17:28:27,647 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 17:28:27,703 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 17:28:27,706 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 17:28:27,707 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 17:28:27,711 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 17:28:27,712 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 17:28:27,715 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 17:28:27,716 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 17:28:27,721 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 17:28:27,722 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 17:28:27,724 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 17:28:27,737 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 17:28:27,738 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 17:28:27,740 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 17:28:27,741 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 17:28:27,743 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 17:28:27,745 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 17:28:27,747 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 17:28:27,749 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 17:28:28,513 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 17:28:28,826 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 17:28:29,544 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 17:28:29,545 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-07 17:34:50,916 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-07 17:34:51,306 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-07 17:34:51,310 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-07 17:34:51,400 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-07 17:34:51,405 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-07 17:34:51,407 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-07 17:34:51,417 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-07 17:34:51,419 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-07 17:34:51,424 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-07 17:34:51,427 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-07 17:34:51,437 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-07 17:34:51,439 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-07 17:34:51,443 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-07 17:34:51,467 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-07 17:34:51,469 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-07 17:34:51,474 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-07 17:34:51,476 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-07 17:34:51,480 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-07 17:34:51,484 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-07 17:34:51,486 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-07 17:34:51,491 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-07 17:34:52,720 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-07 17:34:53,152 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-07 17:34:54,224 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-07 17:34:54,225 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.
+2026-09-09 19:04:56,840 | INFO     | export | Calculando métricas sobre 5000 puntos de demanda...
+2026-09-09 19:04:57,127 | INFO     | export | Métricas calculadas: Gini nacional=0.729 | Mann-Whitney U urbano/rural p=0.0002 | correlación ruralidad-acceso (Spearman)=0.266 (n=200 distritos, correlacional/espacial (no causal))
+2026-09-09 19:04:57,131 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.csv (4 filas)
+2026-09-09 19:04:57,262 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\coverage_bands.tex
+2026-09-09 19:04:57,264 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_district.csv (200 filas)
+2026-09-09 19:04:57,266 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.csv (24 filas)
+2026-09-09 19:04:57,270 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_province.tex
+2026-09-09 19:04:57,272 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.csv (3 filas)
+2026-09-09 19:04:57,275 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\access_time_by_department.tex
+2026-09-09 19:04:57,277 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.csv (30 filas)
+2026-09-09 19:04:57,284 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\critical_districts_ranking.tex
+2026-09-09 19:04:57,286 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.csv (4 filas)
+2026-09-09 19:04:57,289 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\gini_summary.tex
+2026-09-09 19:04:57,303 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\lorenz_curve.csv (5001 filas)
+2026-09-09 19:04:57,305 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.csv (2 filas)
+2026-09-09 19:04:57,308 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_summary.tex
+2026-09-09 19:04:57,310 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.csv (1 filas)
+2026-09-09 19:04:57,313 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\urban_rural_test.tex
+2026-09-09 19:04:57,316 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_vs_access.csv (200 filas)
+2026-09-09 19:04:57,318 | INFO     | export | CSV exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.csv (1 filas)
+2026-09-09 19:04:57,321 | INFO     | export | Tabla LaTeX exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\outputs\rurality_correlation.tex
+2026-09-09 19:04:58,478 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\lorenz_curve.pdf (+ .png a 200dpi)
+2026-09-09 19:04:58,797 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\access_time_distribution_by_department.pdf (+ .png a 200dpi)
+2026-09-09 19:04:59,529 | INFO     | export | Figura exportada: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\report\figures\gap_map_district_access_time.pdf (+ .png a 200dpi)
+2026-09-09 19:04:59,531 | INFO     | export | Fase 3 completa: 11 tablas y 3 figuras exportadas.

@@ -1,0 +1,59 @@
+2026-09-06 19:18:53,636 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-06 19:18:54,040 | INFO     | validation | RENIPRESS filtrado a los 3 departamentos: 3312/36004 registros
+2026-09-06 19:18:54,098 | INFO     | validation | RENIPRESS validado: 2312 registros finales
+2026-09-06 19:18:55,378 | INFO     | validation | Centros Poblados filtrado a los 3 departamentos: 18900/136587 registros
+2026-09-06 19:18:55,598 | INFO     | validation | Centros Poblados validado: 15441 registros finales
+2026-09-06 19:18:55,785 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\renipress_validado.parquet (2312 registros)
+2026-09-06 19:18:55,823 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\centros_poblados_validado.parquet (15441 registros)
+2026-09-06 19:18:55,826 | INFO     | validation | Reporte de calidad escrito: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\logs\data_quality_report.csv (11 reglas registradas)
+2026-09-06 19:18:55,826 | INFO     | validation | Validación completa: {'renipress': {'registros_finales': 2312, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/renipress_validado.parquet')}, 'centros_poblados': {'registros_finales': 15441, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/centros_poblados_validado.parquet')}, 'data_quality_report': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/logs/data_quality_report.csv')}
+2026-09-06 20:04:53,465 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-06 20:04:53,906 | INFO     | validation | RENIPRESS filtrado a los 3 departamentos: 3312/36004 registros
+2026-09-06 20:04:53,977 | INFO     | validation | RENIPRESS validado: 2312 registros finales
+2026-09-06 20:04:55,339 | INFO     | validation | Centros Poblados filtrado a los 3 departamentos: 18900/136587 registros
+2026-09-06 20:04:55,398 | INFO     | validation | Parche Loreto aplicado: +2271 registros (IGN original de Loreto: 3447, todos inválidos)
+2026-09-06 20:04:55,637 | INFO     | validation | Centros Poblados validado: 17712 registros finales
+2026-09-06 20:04:55,674 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\renipress_validado.parquet (2312 registros)
+2026-09-06 20:05:23,760 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-06 20:05:24,163 | INFO     | validation | RENIPRESS filtrado a los 3 departamentos: 3312/36004 registros
+2026-09-06 20:05:24,226 | INFO     | validation | RENIPRESS validado: 2312 registros finales
+2026-09-06 20:05:25,612 | INFO     | validation | Centros Poblados filtrado a los 3 departamentos: 18900/136587 registros
+2026-09-06 20:05:25,652 | INFO     | validation | Parche Loreto aplicado: +2271 registros (IGN original de Loreto: 3447, todos inválidos)
+2026-09-06 20:05:25,905 | INFO     | validation | Centros Poblados validado: 17712 registros finales
+2026-09-06 20:05:25,940 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\renipress_validado.parquet (2312 registros)
+2026-09-06 20:05:25,989 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\centros_poblados_validado.parquet (17712 registros)
+2026-09-06 20:05:25,992 | INFO     | validation | Reporte de calidad escrito: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\logs\data_quality_report.csv (12 reglas registradas)
+2026-09-06 20:05:25,992 | INFO     | validation | Validación completa: {'renipress': {'registros_finales': 2312, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/renipress_validado.parquet')}, 'centros_poblados': {'registros_finales': 17712, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/centros_poblados_validado.parquet')}, 'data_quality_report': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/logs/data_quality_report.csv')}
+2026-09-07 16:35:28,928 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 16:35:29,385 | INFO     | validation | RENIPRESS filtrado a los 3 departamentos: 3312/36004 registros
+2026-09-07 16:35:29,470 | INFO     | validation | RENIPRESS validado: 2312 registros finales
+2026-09-07 16:35:29,590 | INFO     | validation | Centros Poblados filtrado a los 3 departamentos: 8632/8632 registros
+2026-09-07 16:35:29,730 | INFO     | validation | Centros Poblados validado: 8632 registros finales
+2026-09-07 16:35:29,951 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\renipress_validado.parquet (2312 registros)
+2026-09-07 16:35:29,978 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\centros_poblados_validado.parquet (8632 registros)
+2026-09-07 16:35:29,982 | INFO     | validation | Reporte de calidad escrito: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\logs\data_quality_report.csv (11 reglas registradas)
+2026-09-07 16:35:29,982 | INFO     | validation | Validación completa: {'renipress': {'registros_finales': 2312, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/renipress_validado.parquet')}, 'centros_poblados': {'registros_finales': 8632, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/centros_poblados_validado.parquet')}, 'data_quality_report': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/logs/data_quality_report.csv')}
+2026-09-07 16:42:12,742 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 16:43:46,623 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 16:45:06,724 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 16:46:44,275 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 16:59:02,463 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:00:46,505 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:02:28,984 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:05:08,769 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:26:02,525 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:26:50,571 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:27:32,431 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:28:27,968 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-07 17:34:51,893 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-09 19:04:48,084 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-09 19:04:48,538 | INFO     | validation | RENIPRESS filtrado a los 3 departamentos: 3312/36004 registros
+2026-09-09 19:04:48,621 | INFO     | validation | RENIPRESS validado: 2312 registros finales
+2026-09-09 19:04:48,743 | INFO     | validation | Centros Poblados filtrado a los 3 departamentos: 8632/8632 registros
+2026-09-09 19:04:48,877 | INFO     | validation | Centros Poblados validado: 8632 registros finales
+2026-09-09 19:04:49,077 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\renipress_validado.parquet (2312 registros)
+2026-09-09 19:04:49,106 | INFO     | validation | GeoParquet exportado: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\data\processed\centros_poblados_validado.parquet (8632 registros)
+2026-09-09 19:04:49,110 | INFO     | validation | Reporte de calidad escrito: C:\Users\HP\Documents\GitHub\Data-Science-Python\golden_hour\logs\data_quality_report.csv (11 reglas registradas)
+2026-09-09 19:04:49,110 | INFO     | validation | Validación completa: {'renipress': {'registros_finales': 2312, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/renipress_validado.parquet')}, 'centros_poblados': {'registros_finales': 8632, 'geoparquet': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/data/processed/centros_poblados_validado.parquet')}, 'data_quality_report': WindowsPath('C:/Users/HP/Documents/GitHub/Data-Science-Python/golden_hour/logs/data_quality_report.csv')}
+2026-09-09 19:04:57,551 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
+2026-09-09 19:05:42,730 | INFO     | validation | Distritos cargados para ['CUSCO', 'ICA', 'LORETO']: 212 polígonos
